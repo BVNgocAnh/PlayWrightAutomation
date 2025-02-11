@@ -8,14 +8,6 @@ async def login(playwright: Playwright):
     browser = await playwright.chromium.launch(headless=False, slow_mo=600)
     page = await browser.new_page()
     await page.goto("https://bootswatch.com/default/")
-    
-    # username = page.get_by_placeholder("Username")
-    # await username.highlight()
-    # await username.fill(usernameDefault)
-    
-    # password = page.get_by_role(role="textbox", name="password")
-    # await password.highlight()
-    # await password.fill(passwordDefault)
 
     example1 = page.locator('//*[@id="navbarColor01"]/form/input')
     await example1.highlight()
