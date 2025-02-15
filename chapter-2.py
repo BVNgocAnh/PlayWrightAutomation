@@ -1,7 +1,7 @@
 import asyncio
 from playwright.async_api import async_playwright, Playwright
 
-async def login(playwright: Playwright):
+async def locator(playwright: Playwright):
     usernameDefault = "standard_user"
     passwordDefault =  "secret_sauce"
 
@@ -29,6 +29,6 @@ async def login(playwright: Playwright):
 
 async def main():
     async with async_playwright() as playwright:
-        await login(playwright)
+        await locator(playwright)
 
 asyncio.run(main())
