@@ -17,8 +17,25 @@ async def action_textbox(playwright: Playwright):
     await currentAddress_textbox.clear()
     await asyncio.sleep(7)
 
+
+async def action_checkbox(playwright: Playwright):
+    browser = await playwright.chromium.launch(headless=False, slow_mo=600)
+    page = await browser.new_page()
+    await page.goto("https://demoqa.com/checkbox")
+
+    folder_checkbox = page.locator(".rct-checkbox")
+    await folder_checkbox.click()
+    await folder_checkbox.highlight()
+
+    await folder_checkbox.click()
+
+    await asyncio.sleep(7)
+
+
+
+
 async def main():
     async with async_playwright() as playwright:
-        await action_textbox(playwright)
+        await action_checkbox(playwright)
 
 asyncio.run(main())
