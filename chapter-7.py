@@ -10,7 +10,7 @@ def event_handler():
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=False, slow_mo=500)
         page = browser.new_page()
-        # page.on("load", on_load)
+        page.on("load", on_load)
 
         page.on("request", on_request)
         page.goto("https://demoqa.com/automation-practice-form")
@@ -20,7 +20,7 @@ def event_handler():
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=False, slow_mo=500)
         page = browser.new_page()
-        # page.on("load", on_load)
+        page.on("load", on_load)
 
         page.on("request", on_request)
         page.goto("https://demoqa.com/automation-practice-form")
