@@ -41,7 +41,7 @@ def handle_accept_alert(dialog):
 
 def handle_cancel_alert(dialog):
     print("Alert opened: ", dialog)
-    dialog.accept()
+    dialog.dismiss()
     print("Cancel successfully")
 
 def on_event_handler_alert():
@@ -50,6 +50,7 @@ def on_event_handler_alert():
         page = browser.new_page()
         # page.on("dialog", handle_accept_alert)
         # page.on("dialog", handle_cancel_alert )
+        # page.on("dialog", lambda dialog: dialog.dismiss())
         page.on("dialog", lambda dialog:dialog.accept("Automation Testing"))
 
         page.goto("https://demoqa.com/alerts", wait_until="domcontentloaded", timeout=60000)
@@ -60,5 +61,6 @@ def on_event_handler_alert():
         expect(page.locator("//span[@id='promptResult']")).to_contain_text("Automation Testing")
 
         page.close()
+        
 if __name__ == "__main__":
     on_event_handler_alert()
