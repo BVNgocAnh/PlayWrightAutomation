@@ -31,6 +31,7 @@ with sync_playwright() as playwright:
 
     page.locator("//input[@type='password']").fill(password)
     page.get_by_role("button", name="Next").click()
+    #page.pause() => the system will be pause for input 2-factor-authentication || for capture storage_state for new login without account
     page.pause()
 
     #### Here is the

@@ -17,7 +17,8 @@ with sync_playwright() as playwright:
     page.goto("https://gmail.com")
 
     print(page.url)
-
+    
+    # Gmail actions with Playwright
     emails = page.locator("//div[@class='Cp']//table//tr")
     emails.highlight()
     new_emails = []
