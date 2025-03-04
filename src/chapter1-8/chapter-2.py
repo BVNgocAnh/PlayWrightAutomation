@@ -32,3 +32,5 @@ async def main():
         await locator(playwright)
 
 asyncio.run(main())
+
+#ANH BUI
