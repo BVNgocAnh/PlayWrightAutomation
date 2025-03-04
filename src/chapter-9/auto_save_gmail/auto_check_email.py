@@ -13,11 +13,12 @@ with sync_playwright() as playwright:
     browser = playwright.chromium.launch(headless=False, slow_mo= 500)
     context = browser.new_context(storage_state="./auth/storage_stage.json")
     page = context.new_page()
-  
+
     page.goto("https://gmail.com")
 
     print(page.url)
-    
+    #Expect returned valeu will be: https://mail.google.com/mail/u/0/#inbox
+ 
     # Gmail actions with Playwright
     emails = page.locator("//div[@class='Cp']//table//tr")
     emails.highlight()

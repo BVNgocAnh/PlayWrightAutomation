@@ -1,0 +1,11 @@
+# Ignore environment files
+.env
+
+# Ignore Playwright storage state
+**/storage_stage.json
+
+# Ignore Python bytecode cache
+__pycache__/
+
+# Ignore pytest cache
+.pytest_cache/
